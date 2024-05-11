@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.5'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id 'maven-publish'
 }
 
 group = 'xyz.walk8243'
@@ -31,4 +32,22 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri('https://maven.pkg.github.com/walk8243/spring-clock')
+            credentials {
+                username = project.findProperty('gpr.user') ?: System.getenv('USERNAME')
+                password = project.findProperty('gpr.key') ?: System.getenv('TOKEN')
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
 }
