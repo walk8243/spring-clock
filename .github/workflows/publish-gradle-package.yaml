@@ -14,7 +14,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Check Java version
-        run: java -version
+          cache: 'gradle'
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon
