@@ -1,1 +1,8 @@
-spring.application.name=spring-clock
+spring:
+  application:
+    name: spring-clock
+
+  clock:
+    # timezone-id: Asia/Tokyo
+    timezone-id: Europe/London
+    # timezone-id: EST
