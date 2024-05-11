@@ -17,3 +17,8 @@ jobs:
           cache: 'gradle'
       - name: Build with Gradle
         run: ./gradlew build --no-daemon
+      - name: Publish Gradle Package
+        run: ./gradlew publish
+        env:
+          USERNAME: ${{ secrets.GITHUB_REPOSITORY_OWNER }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
