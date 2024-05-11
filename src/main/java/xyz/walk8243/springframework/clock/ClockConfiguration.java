@@ -2,6 +2,7 @@ package xyz.walk8243.springframework.clock;
 
 import java.time.Clock;
 import java.time.ZoneId;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -14,8 +15,15 @@ public class ClockConfiguration {
 	private String timezoneId;
 
 	@Bean
-	public Clock init() {
-		final ZoneId zoneId = ZoneId.of(timezoneId);
+	public ZoneId zoneId() {
+		if (Objects.isNull(timezoneId) || timezoneId.isBlank()) {
+			return ZoneId.systemDefault();
+		}
+		return ZoneId.of(timezoneId);
+	}
+
+	@Bean
+	public Clock clock(final ZoneId zoneId) {
 		return Clock.system(zoneId);
 	}
 }
