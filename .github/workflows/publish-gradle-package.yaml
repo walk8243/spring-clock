@@ -1,12 +1,12 @@
 name: Publish Gradle Package
 
 on:
-  pull_request:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
-  build:
+  publish:
+    name: Publish Package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
