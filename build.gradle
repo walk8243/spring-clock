@@ -47,6 +47,7 @@ publishing {
     }
 	publications {
         maven(MavenPublication) {
+			artifactId = 'spring-clock'
             from components.java
         }
     }
