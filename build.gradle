@@ -50,6 +50,7 @@ publishing {
 	publications {
         maven(MavenPublication) {
 			artifactId = 'spring-clock'
+			version = System.getenv('PACKAGE_VERSION') ?: project.version
             from components.java
         }
     }
