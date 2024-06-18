@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnMissingBean(Clock.class)
 public class ClockConfiguration {
 
-	@Value("${spring.clock.timezone-id}")
+	@Value("${spring.clock.timezone-id:}")
 	private String timezoneId;
 
 	@PostConstruct

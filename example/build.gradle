@@ -25,7 +25,8 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation 'xyz.walk8243:spring-clock:0.1.0'
+	// implementation 'xyz.walk8243:spring-clock:0.1.0'
+	implementation files('../build/libs/spring-clock-0.0.1-SNAPSHOT-plain.jar')
 }
 
 test {

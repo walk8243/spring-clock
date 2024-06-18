@@ -2,7 +2,7 @@ spring:
   application:
     name: spring-clock-example
 
-  clock:
+  # clock:
     # timezone-id: Asia/Tokyo
-    timezone-id: Europe/London
+    # timezone-id: Europe/London
     # timezone-id: EST
