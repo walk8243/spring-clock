@@ -33,6 +33,7 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
 	implementation 'xyz.walk8243:spring-clock:+'
+	// implementation files('../build/libs/spring-clock.jar')
 }
 
 test {
