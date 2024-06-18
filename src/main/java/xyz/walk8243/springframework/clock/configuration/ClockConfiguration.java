@@ -1,4 +1,4 @@
-package xyz.walk8243.springframework.clock;
+package xyz.walk8243.springframework.clock.configuration;
 
 import java.time.Clock;
 import java.time.ZoneId;
