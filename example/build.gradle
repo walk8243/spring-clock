@@ -15,6 +15,13 @@ java {
 
 repositories {
 	mavenCentral()
+	maven {
+		url 'https://maven.pkg.github.com/walk8243/spring-clock'
+		credentials {
+			username = System.getenv('GITHUB_USERNAME')
+			password = System.getenv('GITHUB_TOKEN')
+		}
+	}
 }
 
 dependencies {
@@ -25,7 +32,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-	implementation 'xyz.walk8243:spring-clock:0.1.0'
+	implementation 'xyz.walk8243:spring-clock:+'
 }
 
 test {
