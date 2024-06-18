@@ -8,24 +8,13 @@ group = 'xyz.walk8243'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
-}
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
 repositories {
 	mavenCentral()
-	maven {
-		url 'https://maven.pkg.github.com/walk8243/spring-clock'
-		credentials {
-			username = System.getenv('GITHUB_USERNAME')
-			password = System.getenv('GITHUB_TOKEN')
-		}
-	}
 }
 
 dependencies {

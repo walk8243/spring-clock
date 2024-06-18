@@ -1,4 +1,4 @@
-package xyz.walk8243.springframework.clock;
+package xyz.walk8243.springframework.clock.example;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
@@ -12,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class ClockTask {
-
 	private final Clock clock;
 
 	public void execute() {
