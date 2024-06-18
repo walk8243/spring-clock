@@ -23,7 +23,7 @@ public class ClockConfiguration {
 
 	@PostConstruct
 	public void init() {
-		log.info("ClockConfiguration initialized.");
+		log.debug("ClockConfiguration initialized. timezoneId: {}", timezoneId);
 	}
 
 	@Bean
@@ -39,9 +39,5 @@ public class ClockConfiguration {
 	@ConditionalOnMissingBean(Clock.class)
 	public Clock clock(final ZoneId zoneId) {
 		return Clock.system(zoneId);
-	}
-
-	public static String getHello() {
-		return "Hello";
 	}
 }
