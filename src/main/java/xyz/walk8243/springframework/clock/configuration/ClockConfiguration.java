@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Bean;
 
 @Slf4j
 @Configuration
-@ConditionalOnMissingBean(Clock.class)
 public class ClockConfiguration {
 
 	@Value("${spring.clock.timezone-id:}")
@@ -23,7 +22,7 @@ public class ClockConfiguration {
 
 	@PostConstruct
 	public void init() {
-		log.debug("ClockConfiguration initialized. timezoneId: {}", timezoneId);
+		log.debug("Clock Configuration. timezoneId: {}", timezoneId);
 	}
 
 	@Bean
@@ -32,6 +31,11 @@ public class ClockConfiguration {
 		if (Objects.isNull(timezoneId) || timezoneId.isBlank()) {
 			return ZoneId.systemDefault();
 		}
+
+		if (ZoneId.SHORT_IDS.containsKey(timezoneId)) {
+			return ZoneId.of(timezoneId, ZoneId.SHORT_IDS);
+		}
+
 		return ZoneId.of(timezoneId);
 	}
 
