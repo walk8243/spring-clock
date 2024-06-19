@@ -1,6 +1,7 @@
 package xyz.walk8243.springframework.clock.configuration;
 
 import java.time.Clock;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Objects;
 
@@ -20,9 +21,12 @@ public class ClockConfiguration {
 	@Value("${spring.clock.timezone-id:}")
 	private String timezoneId;
 
+	@Value("${spring.clock.mock-datetime:}")
+	private LocalDateTime mockDatetime;
+
 	@PostConstruct
 	public void init() {
-		log.debug("Clock Configuration. timezoneId: {}", timezoneId);
+		log.debug("Clock Configuration. timezoneId: {}, mockDatetime: {}", timezoneId, mockDatetime);
 	}
 
 	@Bean
@@ -42,6 +46,9 @@ public class ClockConfiguration {
 	@Bean
 	@ConditionalOnMissingBean(Clock.class)
 	public Clock clock(final ZoneId zoneId) {
+		if (Objects.nonNull(mockDatetime)) {
+			return Clock.fixed(mockDatetime.atZone(zoneId).toInstant(), zoneId);
+		}
 		return Clock.system(zoneId);
 	}
 }
