@@ -3,9 +3,10 @@ spring:
     name: spring-clock-example
 
   clock:
-    # timezone-id: Asia/Tokyo
-    timezone-id: Europe/London
+    timezone-id: Asia/Tokyo
+    # timezone-id: Europe/London
     # timezone-id: EST
+    mock-datetime: 2007-12-03T10:15:30
 
 logging:
   level:

@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import xyz.walk8243.springframework.clock.ClockConfiguration;
+import xyz.walk8243.springframework.clock.configuration.ClockConfiguration;
 
 @SpringBootApplication
 public class SpringClockExampleApplication {
