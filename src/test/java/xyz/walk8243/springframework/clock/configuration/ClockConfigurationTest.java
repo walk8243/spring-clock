@@ -24,7 +24,7 @@ class ClockConfigurationTest {
 		@Test
 		void contextLoads() {
 			assertEquals(ZoneId.systemDefault(), clock.getZone());
-			assertEquals(LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME), LocalDateTime.now(clock).format(DateTimeFormatter.ISO_DATE_TIME));
+			assertEquals(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), LocalDateTime.now(clock).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 		}
 	}
 
@@ -41,7 +41,7 @@ class ClockConfigurationTest {
 		void contextLoads() {
 			final ZoneId zoneId = ZoneId.of("Europe/London");
 			assertEquals(zoneId, clock.getZone());
-			assertEquals(LocalDateTime.now(zoneId).format(DateTimeFormatter.ISO_DATE_TIME), LocalDateTime.now(clock).format(DateTimeFormatter.ISO_DATE_TIME));
+			assertEquals(LocalDateTime.now(zoneId).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME), LocalDateTime.now(clock).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 		}
 	}
 
