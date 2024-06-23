@@ -80,7 +80,7 @@ class ClockConfigurationTest {
 		void contextLoads() {
 			assertEquals(ZoneId.of("America/Los_Angeles"), zoneId);
 			assertEquals(ZoneId.of("America/Los_Angeles"), clock.getZone());
-			assertEquals("2007-12-03 10:15:30+-0800", ZonedDateTime.now(clock).format(DATETIME_FORMAT));
+			assertEquals("2007-12-03 10:15:30-0800", ZonedDateTime.now(clock).format(DATETIME_FORMAT));
 		}
 	}
 }
