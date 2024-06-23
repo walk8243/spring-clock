@@ -18,4 +18,4 @@ jobs:
           java-version: '17'
           cache: 'gradle'
       - name: Check with Gradle
-        run: ./gradlew check --no-daemon
+        run: ./gradlew check --no-daemon --info
