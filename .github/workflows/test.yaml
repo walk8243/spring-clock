@@ -19,3 +19,5 @@ jobs:
           cache: 'gradle'
       - name: Check with Gradle
         run: ./gradlew check --no-daemon --info
+    env:
+      TZ: 'Asia/Tokyo'
